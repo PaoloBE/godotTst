@@ -28,9 +28,11 @@ func _on_Area2D_mouse_exited():
 
     
 func _on_Area2D_input_event(viewport, event, shape_idx):
+  print(get_parent().get_node("Teste").get_transform().get_origin().round()," con:",get_viewport().get_mouse_position().round())
   if event is InputEventMouseButton:
     if event.is_pressed() == false:
 	     print("no en: ", event.position)
     else:
          print("si en: ", event.position)
+  
   pass # replace with function body

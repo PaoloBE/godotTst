@@ -47,7 +47,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 487.964, 262.384 )
 texture = ExtResource( 3 )
-script = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Area2D" type="Area2D" parent="Teste" index="0"]
 
@@ -65,14 +65,36 @@ _sections_unfolded = [ "Collision", "Pickable", "Transform" ]
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="Teste2" type="Sprite" parent="." index="2"]
+
+position = Vector2( 737.195, 166.62 )
+texture = ExtResource( 3 )
+script = ExtResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="Teste2" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Pickable", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teste2/Area2D" index="0"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
 [connection signal="input_event" from="BOTON1/Area2D" to="BOTON1" method="_on_Area2D_input_event"]
 
 [connection signal="mouse_entered" from="BOTON1/Area2D" to="BOTON1" method="_on_Area2D_mouse_entered"]
 
 [connection signal="mouse_exited" from="BOTON1/Area2D" to="BOTON1" method="_on_Area2D_mouse_exited"]
 
-[connection signal="mouse_entered" from="Teste/Area2D" to="Teste" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_entered" from="Teste2/Area2D" to="Teste2" method="_on_Area2D_mouse_entered"]
 
-[connection signal="mouse_exited" from="Teste/Area2D" to="Teste" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_exited" from="Teste2/Area2D" to="Teste2" method="_on_Area2D_mouse_exited"]
 
 
