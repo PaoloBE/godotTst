@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://BOTON1.png" type="Texture" id=1]
+[ext_resource path="res://BOTON1.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Teste.gd" type="Script" id=4]
+
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 35.9558, 34.7557 )
+
+[node name="Game" type="Node2D" index="0"]
+
+[node name="BOTON1" type="Sprite" parent="." index="0"]
+
+position = Vector2( 193.725, 204.68 )
+scale = Vector2( 0.159907, 0.159907 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area2D" type="Area2D" parent="BOTON1" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Pickable", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BOTON1/Area2D" index="0"]
+
+position = Vector2( 1.30566, 2.09021 )
+scale = Vector2( 25.8604, 25.8081 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Teste" type="Sprite" parent="." index="1"]
+
+position = Vector2( 487.964, 262.384 )
+texture = ExtResource( 3 )
+script = ExtResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="Teste" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Pickable", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teste/Area2D" index="0"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="input_event" from="BOTON1/Area2D" to="BOTON1" method="_on_Area2D_input_event"]
+
+[connection signal="mouse_entered" from="BOTON1/Area2D" to="BOTON1" method="_on_Area2D_mouse_entered"]
+
+[connection signal="mouse_exited" from="BOTON1/Area2D" to="BOTON1" method="_on_Area2D_mouse_exited"]
+
+[connection signal="mouse_entered" from="Teste/Area2D" to="Teste" method="_on_Area2D_mouse_entered"]
+
+[connection signal="mouse_exited" from="Teste/Area2D" to="Teste" method="_on_Area2D_mouse_exited"]
+
+
