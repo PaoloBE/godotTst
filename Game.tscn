@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://BOTON1.png" type="Texture" id=1]
 [ext_resource path="res://BOTON1.gd" type="Script" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
-[ext_resource path="res://Teste.gd" type="Script" id=4]
 
 [sub_resource type="CircleShape2D" id=2]
 
@@ -47,7 +46,6 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 487.964, 262.384 )
 texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="Area2D" type="Area2D" parent="Teste" index="0"]
 
@@ -69,7 +67,6 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 737.195, 166.62 )
 texture = ExtResource( 3 )
-script = ExtResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="Teste2" index="0"]
 
