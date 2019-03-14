@@ -38,6 +38,8 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
          print("no en: ", event.position)
          if abs(get_viewport().get_mouse_position().round().x - get_parent().get_node("Teste").get_transform().origin.x) >= 25 or abs(get_viewport().get_mouse_position().round().y - get_parent().get_node("Teste").get_transform().origin.y) >= 25:
             set_position(Vector2(iniX,iniY))
+         else:
+            set_position(get_parent().get_node("Teste").get_transform().get_origin())
     else:
          print("si en: ", event.position)
   

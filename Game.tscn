@@ -1,20 +1,20 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://BOTON1.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/BOTON1.png" type="Texture" id=1]
 [ext_resource path="res://BOTON1.gd" type="Script" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 10.0
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 35.9558, 34.7557 )
 
-[node name="Game" type="Node2D" index="0"]
+[node name="Game" type="Node2D"]
 
 [node name="BOTON1" type="Sprite" parent="." index="0"]
 
@@ -39,7 +39,7 @@ _sections_unfolded = [ "Pickable", "Transform" ]
 
 position = Vector2( 1.30566, 2.09021 )
 scale = Vector2( 25.8604, 25.8081 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Teste" type="Sprite" parent="." index="1"]
@@ -60,7 +60,7 @@ _sections_unfolded = [ "Collision", "Pickable", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teste/Area2D" index="0"]
 
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Teste2" type="Sprite" parent="." index="2"]
@@ -81,7 +81,7 @@ _sections_unfolded = [ "Collision", "Pickable", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teste2/Area2D" index="0"]
 
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [connection signal="input_event" from="BOTON1/Area2D" to="BOTON1" method="_on_Area2D_input_event"]
